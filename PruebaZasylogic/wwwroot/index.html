@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba Zasylogic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        input, select {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            cursor: pointer;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario Atención Cliente</h1>
+
+    <form id="formulario">
+        <input type="text" id="nombre" placeholder="Nombre" required />
+        <input type="text" id="apellidos" placeholder="Apellidos" required />
+        <input type="text" id="celular" placeholder="Celular" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <select id="sexo" required>
+            <option value="">Sexo</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select>
+        <select id="motivo" required>
+            <option value="">Motivo</option>
+            <option value="1">Incidencia</option>
+            <option value="2">Queja</option>
+            <option value="3">Reclamación</option>
+        </select>
+        <button type="submit">ENVIAR</button>
+    </form>
+
+    <h2>Listado (ficticio con array)</h2>
+    <label>Desde: <input type="date" id="fechaInicio" /></label>
+    <label>Hasta: <input type="date" id="fechaFin" /></label>
+
+    <table>
+        <thead>
+            <tr>
+                <th onclick="ordenar('nombre')">Nombre</th>
+                <th onclick="ordenar('motivo')">Motivo</th>
+                <th onclick="ordenar('fecha')">Fecha</th>
+            </tr>
+        </thead>
+        <tbody id="tablaBody"></tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
